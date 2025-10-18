@@ -4,25 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OSKCORP SPA — Consultora</title>
-<meta name="description" content="OSKCORP SPA: Ingeniería + Software. ERP, WMS, municipalidades, salud, agro.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%236366f1'/%3E%3Cpath d='M18 40 L32 16 L46 40' fill='none' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='white'/%3E%3C/svg%3E">
+<meta name="description" content="OSKCORP SPA: Ingeniería + Software. ERP, WMS, municipalidades, salud y agro.">
+<link rel="icon" href="favicon.ico">
 <style>
-  /* ====== Estilos mínimos y fáciles de recordar ====== */
-  :root{ --fg:#111827; --bg:#ffffff; --muted:#6b7280; --line:#e5e7eb; --brand:#4f46e5; }
+  :root{ --fg:#111827; --bg:#ffffff; --muted:#6b7280; --line:#e5e7eb; --brand:#4f46e5; --accent:#22c55e; }
   *{ box-sizing:border-box; }
   body{ margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); line-height:1.6; }
-  a{ color:var(--brand); text-decoration:none; }
-  a:hover{ text-decoration:underline; }
+  a{ color:var(--brand); text-decoration:none; } a:hover{ text-decoration:underline; }
   .wrap{ max-width: 980px; margin: 0 auto; padding: 0 16px; }
   header{ position: sticky; top: 0; background: #fff; border-bottom:1px solid var(--line); }
   .topbar{ display:flex; align-items:center; gap:16px; padding:12px 0; }
-  .brand{ font-weight:800; letter-spacing: .2px; }
   nav{ margin-left:auto; display:flex; gap:12px; }
+  .brand-img{ width:40px; height:40px; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,.08); }
   .hero{ padding: 40px 0; }
   .hero h1{ margin:0; line-height:1.1; font-size: 40px; }
   .hero p{ color: var(--muted); max-width: 62ch; }
-  .row{ display:flex; gap:16px; }
-  .row > *{ flex:1; }
+  .row{ display:flex; gap:16px; } .row > *{ flex:1; }
   .card{ border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff; }
   section{ padding: 28px 0; border-top:1px solid var(--line); }
   h2{ margin:0 0 8px 0; font-size: 24px; }
@@ -30,15 +27,25 @@
   footer{ padding:24px 0; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
   .small{ color:var(--muted); font-size:14px; }
   .btn{ display:inline-block; background:var(--brand); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; }
+  .btn.light{ background:#fff; border:1px solid var(--line); color:var(--fg); }
   .grid{ display:grid; gap:12px; grid-template-columns: repeat(3,1fr); }
+  .wa{ position:fixed; right:16px; bottom:16px; z-index:9999; }
+  .wa a{ display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#083; padding:10px 14px; border-radius:999px; font-weight:800; border:1px solid #065f46; box-shadow:0 6px 18px rgba(16,185,129,.35); text-decoration:none; }
+  .wa svg{ width:20px; height:20px; }
+  form{ display:grid; gap:10px; max-width:560px; }
+  input, textarea{ width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--line); font: inherit; }
+  textarea{ min-height:120px; resize:vertical; }
+  .ok{ padding:12px; border:1px solid #bbf7d0; background:#f0fdf4; color:#14532d; border-radius:12px; }
+  .err{ padding:12px; border:1px solid #fecaca; background:#fef2f2; color:#7f1d1d; border-radius:12px; }
   @media (max-width:900px){ .row{flex-direction:column;} .grid{grid-template-columns:1fr;} .hero h1{font-size:32px;} }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap topbar">
-    <!-- Logo simple en texto para fácil edición -->
-    <div class="brand">OSKCORP <span style="color:var(--brand)">SPA</span></div>
+    <!-- Logo simple (puedes reemplazar src por 'logo.png') -->
+    <img class="brand-img" alt="Logo OSKCORP" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%236366f1'/%3E%3Cpath d='M18 40 L32 16 L46 40' fill='none' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='white'/%3E%3C/svg%3E">
+    <strong>OSKCORP <span style="color:var(--brand)">SPA</span></strong>
     <nav>
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
@@ -48,7 +55,6 @@
 </header>
 
 <main>
-  <!-- HERO: frase clara y CTA -->
   <section class="hero">
     <div class="wrap">
       <h1>Automatizamos procesos, transformamos gestión.</h1>
@@ -58,98 +64,89 @@
         <span class="small">· contacto.oskcorp@gmail.com · +56 9 8452 8431</span>
       </p>
       <div class="row">
-        <div class="card">
-          <strong>+10</strong><br><span class="small">Sistemas creados</span>
-        </div>
-        <div class="card">
-          <strong>+7</strong><br><span class="small">Años de experiencia</span>
-        </div>
-        <div class="card">
-          <strong>24/7</strong><br><span class="small">Soporte por correo</span>
-        </div>
+        <div class="card"><strong>+10</strong><br><span class="small">Sistemas creados</span></div>
+        <div class="card"><strong>+7</strong><br><span class="small">Años de experiencia</span></div>
+        <div class="card"><strong>24/7</strong><br><span class="small">Soporte por correo</span></div>
       </div>
     </div>
   </section>
 
-  <!-- SERVICIOS: lista corta y clara -->
   <section id="servicios">
     <div class="wrap">
       <h2>Servicios</h2>
       <div class="grid">
-        <div class="card">
-          <strong>ERP y WMS</strong>
-          <p class="small">Inventarios FEFO, multi‑bodega, QR/códigos de barra, caducidad y reportes por rol.</p>
-        </div>
-        <div class="card">
-          <strong>Automatización municipal</strong>
-          <p class="small">Licitaciones, señalética, flota, solicitudes RRHH y atención ciudadana.</p>
-        </div>
-        <div class="card">
-          <strong>Apps y dashboards</strong>
-          <p class="small">KPIs, analítica, apps web/móvil y empaquetado .exe para demos sin internet.</p>
-        </div>
+        <div class="card"><strong>ERP y WMS</strong><p class="small">Inventarios FEFO, multi‑bodega, QR/códigos de barra, caducidad y reportes por rol.</p></div>
+        <div class="card"><strong>Automatización municipal</strong><p class="small">Licitaciones, señalética, flota, solicitudes RRHH y atención ciudadana.</p></div>
+        <div class="card"><strong>Apps y dashboards</strong><p class="small">KPIs, analítica, apps web/móvil y empaquetado .exe para demos sin internet.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- PROYECTOS: nombres y una línea por proyecto -->
   <section id="proyectos">
     <div class="wrap">
       <h2>Proyectos</h2>
       <div class="grid">
-        <div class="card">
-          <strong>Control Center (Inventarios / Salud)</strong>
-          <p class="small">WMS con FEFO, caducidad y alertas por correo. Multi‑bodega y dashboard.</p>
-        </div>
-        <div class="card">
-          <strong>ERP ONE (PyMEs / Municipalidades)</strong>
-          <p class="small">Finanzas, RRHH, Compras, Inventario, Producción, CRM y Logística.</p>
-        </div>
-        <div class="card">
-          <strong>CampoSeguro (Agro)</strong>
-          <p class="small">Cosechas, inventarios, proveedores y finanzas. Modo offline/online.</p>
-        </div>
-        <div class="card">
-          <strong>Veterinaria PRO</strong>
-          <p class="small">Fichas clínicas con chip/QR, procedimientos y reportes.</p>
-        </div>
-        <div class="card">
-          <strong>Señaléticas Muni</strong>
-          <p class="small">Catastro, órdenes de trabajo, SLA, georreferencias y KPIs.</p>
-        </div>
-        <div class="card">
-          <strong>Daily Optimizer PRO</strong>
-          <p class="small">Planificación personal con IA, hábitos y presupuesto.</p>
-        </div>
+        <div class="card"><strong>Control Center (Inventarios / Salud)</strong><p class="small">WMS con FEFO, caducidad y alertas por correo. Multi‑bodega y dashboard.</p></div>
+        <div class="card"><strong>ERP ONE (PyMEs / Municipalidades)</strong><p class="small">Finanzas, RRHH, Compras, Inventario, Producción, CRM y Logística.</p></div>
+        <div class="card"><strong>CampoSeguro (Agro)</strong><p class="small">Cosechas, inventarios, proveedores y finanzas. Modo offline/online.</p></div>
+        <div class="card"><strong>Veterinaria PRO</strong><p class="small">Fichas clínicas con chip/QR, procedimientos y reportes.</p></div>
+        <div class="card"><strong>Señaléticas Muni</strong><p class="small">Catastro, órdenes de trabajo, SLA, georreferencias y KPIs.</p></div>
+        <div class="card"><strong>Daily Optimizer PRO</strong><p class="small">Planificación personal con IA, hábitos y presupuesto.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACTO: datos claros y enlace mailto -->
   <section id="contacto">
     <div class="wrap">
       <h2>Contacto</h2>
-      <p class="small">¿Tienes un proyecto? Escríbeme y coordinamos una demo.</p>
-      <ul class="clean">
-        <li><strong>Correo:</strong> <a href="mailto:contacto.oskcorp@gmail.com">contacto.oskcorp@gmail.com</a></li>
-        <li><strong>Teléfono:</strong> +56 9 8452 8431</li>
-        <li><strong>Ubicación:</strong> Lo Espejo, Chile</li>
-      </ul>
+      <p class="small">Envíame tu consulta y te respondo por correo. (Sin backend: usa el servicio FormSubmit.)</p>
+      <div id="msg" style="display:none" class="ok">¡Gracias! Tu mensaje fue enviado.</div>
+      <form id="f" action="https://formsubmit.co/contacto.oskcorp@gmail.com" method="POST">
+        <!-- Campos visibles -->
+        <input type="text"   name="Nombre"   placeholder="Tu nombre" required>
+        <input type="email"  name="Email"    placeholder="Tu correo" required>
+        <textarea            name="Mensaje"  placeholder="Cuéntame tu idea" required></textarea>
+
+        <!-- Opciones FormSubmit -->
+        <input type="hidden" name="_subject" value="Contacto desde oskcorp-web">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_autoresponse" value="¡Hola! Recibimos tu mensaje. Te responderemos a la brevedad. — OSKCORP SPA">
+        <!-- Redirección de éxito: a tu misma página con #gracias -->
+        <input type="hidden" name="_next" value="https://contactooskcorp-boop.github.io/oskcorp-web/#gracias">
+
+        <!-- Honeypot anti-spam (no eliminar) -->
+        <input type="text" name="_honey" style="display:none">
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px">
+          <button type="submit" class="btn">Enviar</button>
+          <a class="btn light" href="mailto:contacto.oskcorp@gmail.com">Abrir correo</a>
+        </div>
+      </form>
+      <p class="small">Primera vez: FormSubmit te enviará un correo para **verificar** tu dirección. Luego los mensajes llegan directo a tu bandeja.</p>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    © <span id="year">2025</span> OSKCORP SPA — Todos los derechos reservados.
-  </div>
+  <div class="wrap">© <span id="year">2025</span> OSKCORP SPA — Todos los derechos reservados.</div>
 </footer>
 
-<!-- Nota para ti: El HTML es deliberadamente simple.
-     Edita textos en claro. Agrega proyectos duplicando <div class="card"> dentro de #proyectos. -->
+<!-- Botón WhatsApp flotante -->
+<div class="wa">
+  <a href="https://wa.me/56984528431?text=Hola%20OSKCORP%2C%20quisiera%20cotizar%20un%20proyecto%20de%20software" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.57 2 2.12 6.45 2.12 11.92c0 2.1.6 4.05 1.66 5.71L2 22l4.5-1.74a9.88 9.88 0 0 0 5.54 1.66c5.47 0 9.93-4.45 9.93-9.92S17.5 2 12.04 2Zm5.78 14.13c-.24.68-1.18 1.24-1.94 1.4-.52.1-1.2.18-3.5-.73-2.94-1.22-4.83-4.21-4.98-4.4-.14-.2-1.19-1.58-1.19-3.02 0-1.45.76-2.15 1.03-2.44.24-.27.63-.39 1-.39h.24c.3.01.47.03.67.52.26.62.9 2.13.98 2.29.08.17.13.36.02.57-.1.21-.16.34-.32.53-.16.2-.34.45-.49.61-.16.16-.33.34-.14.66.2.33.9 1.49 1.94 2.41 1.34 1.2 2.48 1.58 2.83 1.74.35.16.55.14.76-.08.21-.22.88-1.03 1.12-1.39.24-.35.48-.29.8-.17.33.12 2.07.98 2.43 1.16.36.17.6.27.69.42.08.16.08.9-.16 1.58Z"/></svg>
+    WhatsApp
+  </a>
+</div>
+
 <script>
-  // Solo para actualizar el año automáticamente (puedes borrar este script si prefieres 100% estático)
+  // Año dinámico y mensaje de gracias si llega desde FormSubmit
   document.getElementById('year').textContent = new Date().getFullYear();
+  if (location.hash === '#gracias') {
+    const box = document.getElementById('msg'); if (box) box.style.display = 'block';
+    window.scrollTo({ top: box.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+  }
 </script>
 </body>
 </html>
