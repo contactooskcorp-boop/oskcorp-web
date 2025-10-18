@@ -3,48 +3,52 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OSKCORP SPA — Consultora</title>
-<meta name="description" content="OSKCORP SPA: Ingeniería + Software. ERP, WMS, municipalidades, salud y agro.">
-<link rel="icon" href="favicon.ico">
+<title>OSKCORP SPA — Ingeniería de Software y Automatización</title>
+<meta name="description" content="OSKCORP SPA: Ingeniería + Software a medida. ERP, WMS (FEFO), automatización municipal, dashboards y apps.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%236366f1'/%3E%3Cpath d='M18 40 L32 16 L46 40' stroke='%23fff' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
 <style>
-  :root{ --fg:#111827; --bg:#ffffff; --muted:#6b7280; --line:#e5e7eb; --brand:#4f46e5; --accent:#22c55e; }
-  *{ box-sizing:border-box; }
-  body{ margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color:var(--fg); background:var(--bg); line-height:1.6; }
-  a{ color:var(--brand); text-decoration:none; } a:hover{ text-decoration:underline; }
-  .wrap{ max-width: 980px; margin: 0 auto; padding: 0 16px; }
-  header{ position: sticky; top: 0; background: #fff; border-bottom:1px solid var(--line); }
-  .topbar{ display:flex; align-items:center; gap:16px; padding:12px 0; }
-  nav{ margin-left:auto; display:flex; gap:12px; }
-  .brand-img{ width:40px; height:40px; border-radius:10px; box-shadow:0 1px 6px rgba(0,0,0,.08); }
-  .hero{ padding: 40px 0; }
-  .hero h1{ margin:0; line-height:1.1; font-size: 40px; }
-  .hero p{ color: var(--muted); max-width: 62ch; }
-  .row{ display:flex; gap:16px; } .row > *{ flex:1; }
-  .card{ border:1px solid var(--line); border-radius:14px; padding:16px; background:#fff; }
-  section{ padding: 28px 0; border-top:1px solid var(--line); }
-  h2{ margin:0 0 8px 0; font-size: 24px; }
-  ul.clean{ margin:0; padding-left:18px; }
-  footer{ padding:24px 0; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
-  .small{ color:var(--muted); font-size:14px; }
-  .btn{ display:inline-block; background:var(--brand); color:#fff; padding:10px 14px; border-radius:10px; font-weight:700; }
-  .btn.light{ background:#fff; border:1px solid var(--line); color:var(--fg); }
-  .grid{ display:grid; gap:12px; grid-template-columns: repeat(3,1fr); }
-  .wa{ position:fixed; right:16px; bottom:16px; z-index:9999; }
-  .wa a{ display:inline-flex; align-items:center; gap:8px; background:var(--accent); color:#083; padding:10px 14px; border-radius:999px; font-weight:800; border:1px solid #065f46; box-shadow:0 6px 18px rgba(16,185,129,.35); text-decoration:none; }
-  .wa svg{ width:20px; height:20px; }
-  form{ display:grid; gap:10px; max-width:560px; }
-  input, textarea{ width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--line); font: inherit; }
-  textarea{ min-height:120px; resize:vertical; }
-  .ok{ padding:12px; border:1px solid #bbf7d0; background:#f0fdf4; color:#14532d; border-radius:12px; }
-  .err{ padding:12px; border:1px solid #fecaca; background:#fef2f2; color:#7f1d1d; border-radius:12px; }
-  @media (max-width:900px){ .row{flex-direction:column;} .grid{grid-template-columns:1fr;} .hero h1{font-size:32px;} }
+  :root{
+    --fg:#0f172a; --muted:#64748b; --bg:#ffffff; --line:#e2e8f0;
+    --brand:#4f46e5; --brand2:#06b6d4; --ok:#16a34a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
+  a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:50}
+  .topbar{display:flex;align-items:center;gap:14px;padding:12px 0}
+  .brand-img{width:40px;height:40px;border-radius:10px;box-shadow:0 1px 6px rgba(0,0,0,.06)}
+  nav{margin-left:auto;display:flex;gap:14px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;font-weight:700;border:1px solid var(--line);background:#fff}
+  .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border:none}
+  .hero{padding:64px 0;background:radial-gradient(60% 60% at 50% 0%,rgba(79,70,229,.12),rgba(255,255,255,0))}
+  .hero h1{margin:0;line-height:1.1;font-size:42px}
+  .hero p{color:var(--muted);max-width:62ch}
+  .row{display:grid;grid-template-columns:1.2fr .8fr;gap:24px}
+  @media (max-width:980px){.row{grid-template-columns:1fr} .hero h1{font-size:34px}}
+  .card{border:1px solid var(--line);border-radius:16px;padding:16px;background:#fff}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
+  @media (max-width:680px){.kpis{grid-template-columns:1fr}}
+  section{padding:36px 0;border-top:1px solid var(--line)}
+  h2{margin:0 0 8px 0;font-size:26px}
+  .grid3{display:grid;gap:14px;grid-template-columns:repeat(3,1fr)}
+  @media (max-width:980px){.grid3{grid-template-columns:1fr}}
+  footer{padding:26px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+  .illus-card{border:1px dashed var(--line);border-radius:16px;display:grid;place-items:center;padding:0;background:linear-gradient(180deg,#fff, #f8fafc)}
+  .illus{width:100%;max-width:520px;height:auto}
+  .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#eef2ff;color:#3730a3;font-weight:700;font-size:12px;border:1px solid #e0e7ff}
+  form{display:grid;gap:10px;max-width:560px}
+  input, textarea{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);font:inherit}
+  textarea{min-height:120px;resize:vertical}
+  .wa{position:fixed;right:16px;bottom:16px;z-index:9999}
+  .wa a{display:inline-flex;align-items:center;gap:8px;background:#22c55e;color:#064e3b;padding:10px 14px;border-radius:999px;font-weight:800;border:1px solid #065f46;box-shadow:0 6px 18px rgba(16,185,129,.35);text-decoration:none}
+  .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#0f172a;color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;display:none}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap topbar">
-    <!-- Logo simple (puedes reemplazar src por 'logo.png') -->
-    <img class="brand-img" alt="Logo OSKCORP" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%236366f1'/%3E%3Cpath d='M18 40 L32 16 L46 40' fill='none' stroke='white' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='white'/%3E%3C/svg%3E">
+    <img class="brand-img" alt="Logo OSKCORP" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%236366f1'/%3E%3Cpath d='M18 40 L32 16 L46 40' stroke='%23fff' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
     <strong>OSKCORP <span style="color:var(--brand)">SPA</span></strong>
     <nav>
       <a href="#servicios">Servicios</a>
@@ -56,17 +60,53 @@
 
 <main>
   <section class="hero">
-    <div class="wrap">
-      <h1>Automatizamos procesos, transformamos gestión.</h1>
-      <p>Ingeniería + Software a medida para municipalidades, salud y empresas. Demos funcionales, entregas rápidas y soporte por correo.</p>
-      <p>
-        <a class="btn" href="#contacto">Escríbeme</a>
-        <span class="small">· contacto.oskcorp@gmail.com · +56 9 8452 8431</span>
-      </p>
-      <div class="row">
-        <div class="card"><strong>+10</strong><br><span class="small">Sistemas creados</span></div>
-        <div class="card"><strong>+7</strong><br><span class="small">Años de experiencia</span></div>
-        <div class="card"><strong>24/7</strong><br><span class="small">Soporte por correo</span></div>
+    <div class="wrap row">
+      <div>
+        <span class="badge">Ingeniería + Software</span>
+        <h1>Automatizamos procesos, transformamos gestión.</h1>
+        <p>ERP y WMS con FEFO, automatización municipal, apps y dashboards. Demos funcionales, entregas rápidas y soporte por correo.</p>
+        <p>
+          <a class="btn primary" href="#proyectos">Ver portafolio</a>
+          <a class="btn" href="#contacto">Contáctame</a>
+        </p>
+        <div class="kpis">
+          <div class="card"><strong>+10</strong><br><span style="color:var(--muted)">Sistemas creados</span></div>
+          <div class="card"><strong>+7</strong><br><span style="color:var(--muted)">Años de experiencia</span></div>
+          <div class="card"><strong>24/7</strong><br><span style="color:var(--muted)">Soporte por correo</span></div>
+        </div>
+      </div>
+      <div class="illus-card">
+        <!-- Ilustración SVG (UI + engranajes: diseño/automatización) -->
+        <svg class="illus" viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustración de interfaz y automatización">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1"><stop offset="0%" stop-color="#4f46e5"/><stop offset="100%" stop-color="#06b6d4"/></linearGradient>
+          </defs>
+          <rect x="20" y="20" width="560" height="320" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+          <rect x="40" y="48" width="180" height="14" rx="7" fill="#e2e8f0"/>
+          <rect x="40" y="74" width="520" height="46" rx="8" fill="url(#g1)" opacity="0.25"/>
+          <rect x="40" y="136" width="340" height="170" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+          <g opacity="0.65">
+            <rect x="56" y="154" width="56" height="8" rx="4" fill="#cbd5e1"/>
+            <rect x="56" y="174" width="108" height="8" rx="4" fill="#e2e8f0"/>
+            <rect x="56" y="194" width="220" height="8" rx="4" fill="#e2e8f0"/>
+            <rect x="56" y="214" width="160" height="8" rx="4" fill="#e2e8f0"/>
+          </g>
+          <rect x="400" y="136" width="160" height="80" rx="12" fill="#f1f5f9" stroke="#e2e8f0"/>
+          <circle cx="480" cy="176" r="24" fill="url(#g1)"/>
+          <rect x="400" y="228" width="160" height="78" rx="12" fill="#f1f5f9" stroke="#e2e8f0"/>
+          <g transform="translate(444,255)">
+            <circle cx="28" cy="28" r="26" fill="#fff" stroke="#cbd5e1"/>
+            <g transform="translate(28,28)">
+              <g transform="rotate(20)">
+                <rect x="-18" y="-2" width="36" height="4" rx="2" fill="#94a3b8"/>
+              </g>
+              <g transform="rotate(90)">
+                <rect x="-18" y="-2" width="36" height="4" rx="2" fill="#94a3b8"/>
+              </g>
+              <circle r="6" fill="url(#g1)"/>
+            </g>
+          </g>
+        </svg>
       </div>
     </div>
   </section>
@@ -74,10 +114,20 @@
   <section id="servicios">
     <div class="wrap">
       <h2>Servicios</h2>
-      <div class="grid">
-        <div class="card"><strong>ERP y WMS</strong><p class="small">Inventarios FEFO, multi‑bodega, QR/códigos de barra, caducidad y reportes por rol.</p></div>
-        <div class="card"><strong>Automatización municipal</strong><p class="small">Licitaciones, señalética, flota, solicitudes RRHH y atención ciudadana.</p></div>
-        <div class="card"><strong>Apps y dashboards</strong><p class="small">KPIs, analítica, apps web/móvil y empaquetado .exe para demos sin internet.</p></div>
+      <p style="color:var(--muted);max-width:62ch">Soluciones robustas con bajo costo operativo: FEFO, multi‑bodega, QR/barcode, caducidades, permisos por rol, KPIs y empaquetado .exe para demos offline.</p>
+      <div class="grid3" style="margin-top:12px">
+        <div class="card">
+          <strong>ERP y WMS</strong>
+          <p style="color:var(--muted)">Inventarios FEFO, lotes/caducidad, multi‑bodega, picking y reportes.</p>
+        </div>
+        <div class="card">
+          <strong>Automatización municipal</strong>
+          <p style="color:var(--muted)">Señalética, flota, solicitudes RRHH, órdenes de trabajo y atención ciudadana.</p>
+        </div>
+        <div class="card">
+          <strong>Apps y dashboards</strong>
+          <p style="color:var(--muted)">KPIs y analítica. Web/móvil. Integración rápida y entregas iterativas.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -85,13 +135,22 @@
   <section id="proyectos">
     <div class="wrap">
       <h2>Proyectos</h2>
-      <div class="grid">
-        <div class="card"><strong>Control Center (Inventarios / Salud)</strong><p class="small">WMS con FEFO, caducidad y alertas por correo. Multi‑bodega y dashboard.</p></div>
-        <div class="card"><strong>ERP ONE (PyMEs / Municipalidades)</strong><p class="small">Finanzas, RRHH, Compras, Inventario, Producción, CRM y Logística.</p></div>
-        <div class="card"><strong>CampoSeguro (Agro)</strong><p class="small">Cosechas, inventarios, proveedores y finanzas. Modo offline/online.</p></div>
-        <div class="card"><strong>Veterinaria PRO</strong><p class="small">Fichas clínicas con chip/QR, procedimientos y reportes.</p></div>
-        <div class="card"><strong>Señaléticas Muni</strong><p class="small">Catastro, órdenes de trabajo, SLA, georreferencias y KPIs.</p></div>
-        <div class="card"><strong>Daily Optimizer PRO</strong><p class="small">Planificación personal con IA, hábitos y presupuesto.</p></div>
+      <div class="grid3" style="margin-top:12px">
+        <div class="card">
+          <strong>Control Center (Inventarios / Salud)</strong>
+          <p style="color:var(--muted)">WMS con FEFO, caducidad y alertas por correo. Multi‑bodega y dashboard.</p>
+          <img alt="Diseño de dashboard WMS" style="width:100%;border:1px solid var(--line);border-radius:12px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' rx='12' fill='%23f8fafc'/%3E%3Crect x='24' y='24' width='592' height='42' rx='8' fill='%23e2e8f0'/%3E%3Crect x='24' y='80' width='300' height='256' rx='10' fill='%23e2e8f0'/%3E%3Crect x='336' y='80' width='280' height='120' rx='10' fill='%23e2e8f0'/%3E%3Crect x='336' y='210' width='280' height='126' rx='10' fill='%23e2e8f0'/%3E%3C/svg%3E">
+        </div>
+        <div class="card">
+          <strong>ERP ONE (PyMEs / Municipalidades)</strong>
+          <p style="color:var(--muted)">Finanzas, RRHH, Compras, Inventario, Producción, CRM y Logística.</p>
+          <img alt="Módulos ERP" style="width:100%;border:1px solid var(--line);border-radius:12px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' rx='12' fill='%23f8fafc'/%3E%3Cg fill='%23e2e8f0'%3E%3Crect x='24' y='24' width='280' height='140' rx='10'/%3E%3Crect x='336' y='24' width='280' height='140' rx='10'/%3E%3Crect x='24' y='184' width='280' height='152' rx='10'/%3E%3Crect x='336' y='184' width='280' height='152' rx='10'/%3E%3C/g%3E%3C/svg%3E">
+        </div>
+        <div class="card">
+          <strong>CampoSeguro (Agro)</strong>
+          <p style="color:var(--muted)">Cosechas, inventarios, proveedores y finanzas. Modo offline/online.</p>
+          <img alt="Gestión agrícola" style="width:100%;border:1px solid var(--line);border-radius:12px" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' rx='12' fill='%23f8fafc'/%3E%3Cpath d='M0 300 Q160 240 320 300 T640 300 V360 H0Z' fill='%23e2e8f0'/%3E%3Crect x='40' y='40' width='120' height='30' rx='6' fill='%23e2e8f0'/%3E%3C/svg%3E">
+        </div>
       </div>
     </div>
   </section>
@@ -99,31 +158,23 @@
   <section id="contacto">
     <div class="wrap">
       <h2>Contacto</h2>
-      <p class="small">Envíame tu consulta y te respondo por correo. (Sin backend: usa el servicio FormSubmit.)</p>
-      <div id="msg" style="display:none" class="ok">¡Gracias! Tu mensaje fue enviado.</div>
+      <p style="color:var(--muted)">¿Tienes un proyecto? Envíame un mensaje y coordinamos una demo.</p>
       <form id="f" action="https://formsubmit.co/contacto.oskcorp@gmail.com" method="POST">
-        <!-- Campos visibles -->
-        <input type="text"   name="Nombre"   placeholder="Tu nombre" required>
-        <input type="email"  name="Email"    placeholder="Tu correo" required>
-        <textarea            name="Mensaje"  placeholder="Cuéntame tu idea" required></textarea>
-
-        <!-- Opciones FormSubmit -->
+        <input type="text" name="Nombre" placeholder="Tu nombre" required>
+        <input type="email" name="Email" placeholder="Tu correo" required>
+        <textarea name="Mensaje" placeholder="Cuéntame tu idea" required></textarea>
         <input type="hidden" name="_subject" value="Contacto desde oskcorp-web">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_autoresponse" value="¡Hola! Recibimos tu mensaje. Te responderemos a la brevedad. — OSKCORP SPA">
-        <!-- Redirección de éxito: a tu misma página con #gracias -->
         <input type="hidden" name="_next" value="https://contactooskcorp-boop.github.io/oskcorp-web/#gracias">
-
-        <!-- Honeypot anti-spam (no eliminar) -->
         <input type="text" name="_honey" style="display:none">
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:4px">
-          <button type="submit" class="btn">Enviar</button>
-          <a class="btn light" href="mailto:contacto.oskcorp@gmail.com">Abrir correo</a>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn primary" type="submit">Enviar</button>
+          <a class="btn" href="mailto:contacto.oskcorp@gmail.com">Abrir correo</a>
         </div>
       </form>
-      <p class="small">Primera vez: FormSubmit te enviará un correo para **verificar** tu dirección. Luego los mensajes llegan directo a tu bandeja.</p>
+      <div id="toast" class="toast">¡Gracias! Tu mensaje fue enviado.</div>
     </div>
   </section>
 </main>
@@ -132,20 +183,18 @@
   <div class="wrap">© <span id="year">2025</span> OSKCORP SPA — Todos los derechos reservados.</div>
 </footer>
 
-<!-- Botón WhatsApp flotante -->
 <div class="wa">
-  <a href="https://wa.me/56984528431?text=Hola%20OSKCORP%2C%20quisiera%20cotizar%20un%20proyecto%20de%20software" target="_blank" rel="noopener">
+  <a href="https://wa.me/56984528431?text=Hola%20OSKCORP%2C%20quisiera%20cotizar%20un%20proyecto" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.57 2 2.12 6.45 2.12 11.92c0 2.1.6 4.05 1.66 5.71L2 22l4.5-1.74a9.88 9.88 0 0 0 5.54 1.66c5.47 0 9.93-4.45 9.93-9.92S17.5 2 12.04 2Zm5.78 14.13c-.24.68-1.18 1.24-1.94 1.4-.52.1-1.2.18-3.5-.73-2.94-1.22-4.83-4.21-4.98-4.4-.14-.2-1.19-1.58-1.19-3.02 0-1.45.76-2.15 1.03-2.44.24-.27.63-.39 1-.39h.24c.3.01.47.03.67.52.26.62.9 2.13.98 2.29.08.17.13.36.02.57-.1.21-.16.34-.32.53-.16.2-.34.45-.49.61-.16.16-.33.34-.14.66.2.33.9 1.49 1.94 2.41 1.34 1.2 2.48 1.58 2.83 1.74.35.16.55.14.76-.08.21-.22.88-1.03 1.12-1.39.24-.35.48-.29.8-.17.33.12 2.07.98 2.43 1.16.36.17.6.27.69.42.08.16.08.9-.16 1.58Z"/></svg>
     WhatsApp
   </a>
 </div>
 
 <script>
-  // Año dinámico y mensaje de gracias si llega desde FormSubmit
   document.getElementById('year').textContent = new Date().getFullYear();
   if (location.hash === '#gracias') {
-    const box = document.getElementById('msg'); if (box) box.style.display = 'block';
-    window.scrollTo({ top: box.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth' });
+    const t = document.getElementById('toast');
+    if (t) { t.style.display='block'; setTimeout(()=> t.style.display='none', 4000); }
   }
 </script>
 </body>
