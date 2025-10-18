@@ -5,12 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>OSKCORP SPA — Ingeniería de Software y Automatización</title>
 <meta name="description" content="ERP, WMS (FEFO), automatización municipal, dashboards y apps a medida." />
-<link rel="icon" href="favicon.ico">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='%236366f1'/%3E%3Cpath d='M18 40 L32 16 L46 40' stroke='%23fff' stroke-width='5' stroke-linecap='round' fill='none'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
 <style>
   :root{--fg:#0f172a;--muted:#64748b;--line:#e2e8f0;--brand:#4f46e5;--brand2:#06b6d4}
   *{box-sizing:border-box} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Arial,sans-serif;color:var(--fg);line-height:1.6;background:#fff}
   a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
-  img{max-width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
   .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
   header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
   .top{display:flex;align-items:center;gap:12px;padding:12px 0}
@@ -23,6 +22,7 @@
   .kpis{display:grid;gap:12px;grid-template-columns:repeat(3,1fr)} @media(max-width:640px){.kpis{grid-template-columns:1fr}}
   section{padding:32px 0;border-top:1px solid var(--line)}
   h1{margin:0;font-size:40px;line-height:1.1} h2{margin:0 0 8px 0}
+  img, .illus{max-width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
   footer{padding:24px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
   /* WhatsApp */
   .wa{position:fixed;right:16px;bottom:16px;z-index:9999}
@@ -63,8 +63,24 @@
         </div>
       </div>
       <div class="card">
-        <!-- Imagen estable: sirve desde tu repo -->
-        <img alt="Dashboard WMS" src="https://raw.githubusercontent.com/contactooskcorp-boop/oskcorp-web/main/assets/wms-dashboard.png" loading="lazy">
+        <!-- Ilustración HERO (SVG inline, sin dependencias) -->
+        <svg class="illus" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dashboard WMS">
+          <defs>
+            <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f8fafc"/>
+              <stop offset="1" stop-color="#f1f5f9"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="1198" height="673" rx="22" fill="url(#g)" stroke="#e2e8f0"/>
+          <rect x="60" y="48" width="1080" height="48" rx="10" fill="#e6ebf2"/>
+          <!-- grid 3x2 -->
+          <rect x="90" y="136" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+          <rect x="440" y="136" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+          <rect x="790" y="136" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+          <rect x="90" y="338" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+          <rect x="440" y="338" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+          <rect x="790" y="338" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+        </svg>
       </div>
     </div>
   </section>
@@ -89,17 +105,38 @@
         <div class="card">
           <b>Control Center (Inventarios / Salud)</b>
           <p style="color:var(--muted)">WMS con FEFO, caducidad y alertas por correo. Multi-bodega y dashboard.</p>
-          <img alt="WMS" src="https://raw.githubusercontent.com/contactooskcorp-boop/oskcorp-web/main/assets/wms-dashboard.png" loading="lazy">
+          <!-- mini-mockup WMS -->
+          <svg class="illus" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" aria-label="WMS">
+            <rect x="1" y="1" width="1198" height="673" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+            <rect x="60" y="60" width="1080" height="46" rx="10" fill="#e6ebf2"/>
+            <rect x="90" y="140" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="440" y="140" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="790" y="140" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="90" y="342" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="440" y="342" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="790" y="342" width="320" height="180" rx="22" fill="#e6ebf2" stroke="#d1d5db"/>
+          </svg>
         </div>
         <div class="card">
           <b>ERP ONE (PyMEs / Municipalidades)</b>
           <p style="color:var(--muted)">Finanzas, RRHH, Compras, Inventario, Producción, CRM y Logística.</p>
-          <img alt="ERP" src="https://raw.githubusercontent.com/contactooskcorp-boop/oskcorp-web/main/assets/erp-modulos.png" loading="lazy">
+          <!-- módulos ERP -->
+          <svg class="illus" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" aria-label="ERP">
+            <rect x="1" y="1" width="1198" height="673" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+            <rect x="120" y="140" width="960" height="160" rx="18" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="120" y="360" width="960" height="160" rx="18" fill="#e6ebf2" stroke="#d1d5db"/>
+            <rect x="590" y="120" width="20" height="440" rx="10" fill="#e8ecf6"/>
+          </svg>
         </div>
         <div class="card">
           <b>CampoSeguro (Agro)</b>
           <p style="color:var(--muted)">Cosechas, inventarios, proveedores y finanzas. Modo offline/online.</p>
-          <img alt="Agro" src="https://raw.githubusercontent.com/contactooskcorp-boop/oskcorp-web/main/assets/agro-gestor.png" loading="lazy">
+          <!-- escena agro -->
+          <svg class="illus" viewBox="0 0 1200 675" xmlns="http://www.w3.org/2000/svg" aria-label="Agro">
+            <rect x="1" y="1" width="1198" height="673" rx="22" fill="#ffffff" stroke="#e2e8f0"/>
+            <rect x="120" y="120" width="240" height="40" rx="10" fill="#e6ebf2"/>
+            <path d="M0,520 C200,580 400,540 600,520 C800,500 1000,560 1200,520 L1200,675 L0,675 Z" fill="#e6ebf2"/>
+          </svg>
         </div>
       </div>
     </div>
@@ -138,8 +175,7 @@
 </div>
 
 <script>
-  document.getElementById('y').textContent=new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
-
