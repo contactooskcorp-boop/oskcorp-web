@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es">
+<head>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0%25' stop-color='%236366f1'/%3E%3Cstop offset='100%25' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='4' y='4' width='56' height='56' rx='14' fill='url(%23g)'/%3E%3Cpath d='M18 40 L32 16 L46 40' fill='none' stroke='%23fff' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='44' r='3.5' fill='%23fff'/%3E%3C/svg%3E">
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OSKCORP SPA — Consultora • Automatizamos procesos, transformamos gestión</title>
+<meta name="description" content="OSKCORP SPA: Ingeniería + Software para municipalidades, salud y empresas. ERP, WMS FEFO, señalética, veterianaria, agro, dashboards.">
+<style>
+  :root{
+    --bg: #0b0b0c;
+    --text: #f5f6f7;
+    --muted: #b4b8c2;
+    --card: #131316;
+    --border: #24242a;
+    --brand1:#6366f1;
+    --brand2:#22d3ee;
+    --accent:#8b5cf6;
+    --ok:#10b981;
+    --warn:#f59e0b;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,sans-serif;
+    color:var(--text);
+    background:radial-gradient(60% 60% at 50% 0%, rgba(99,102,241,.18), rgba(0,0,0,0)) , var(--bg);
+    line-height:1.6;
+  }
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1120px;margin:0 auto;padding:0 16px}
+  .header{
+    position:sticky;top:0;z-index:50;
+    backdrop-filter:saturate(160%) blur(8px);
+    background:rgba(19,19,22,.6);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex;align-items:center;gap:16px;padding:10px 0;
+  }
+  .nav a:hover{color:#c7d2fe}
+  .spacer{flex:1}
+  .btn, button.btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:10px 14px;border-radius:12px;border:1px solid var(--border);
+    background:#1a1b20;color:var(--text);font-weight:600;font-size:14px;
+  }
+  .btn.primary{background:linear-gradient(135deg,var(--brand1),var(--brand2));color:#101014;border:none}
+  .btn.ghost:hover{background:#1f2026}
+  .brand{display:flex;align-items:center;gap:10px}
+  .logo{width:36px;height:36px;display:grid;place-items:center}
+  .logo svg{filter:drop-shadow(0 1px 8px rgba(99,102,241,.35))}
+  .brand .title{font-weight:900;letter-spacing:.2px}
+  .muted{color:var(--muted);font-size:14px}
+  .hero{padding:56px 0}
+  .hero-grid{display:grid;gap:24px;grid-template-columns:1.2fr .8fr}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0));
+    border:1px solid var(--border);border-radius:20px;padding:18px;
+  }
+  h1{font-size:40px;line-height:1.1;margin:0}
+  @media (max-width:600px){h1{font-size:32px}}
+  h2{font-size:28px;margin:0 0 6px 0}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media (max-width:800px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  .kpi{border:1px solid var(--border);border-radius:18px;padding:14px;background:#131318}
+  .kpi .n{font-size:22px;font-weight:900}
+  .section{padding:36px 0}
+  .services, .portfolio{display:grid;gap:12px}
+  .services{grid-template-columns:repeat(3,1fr)}
+  @media (max-width:1000px){.services{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.services{grid-template-columns:1fr}}
+  .service{border:1px solid var(--border);border-radius:18px;padding:16px;background:#14141a}
+  .service h3{margin:0 0 6px 0;font-size:18px}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:1000px){.grid3{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:640px){.grid3{grid-template-columns:1fr}}
+  .project{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:#14141a}
+  .project .body{padding:14px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .tag{font-size:12px;border:1px solid var(--border);padding:4px 8px;border-radius:999px;background:#191921}
+  .mock{display:grid;grid-template-rows:repeat(6,1fr);gap:10px;height:100%}
+  .mock .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .bar{height:8px;border-radius:999px;background:#232330;overflow:hidden}
+  .bar > i{display:block;height:100%;width:50%;background:linear-gradient(90deg,var(--brand1),var(--brand2));animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{transform:translateX(-10%)}50%{transform:translateX(60%)}}
+  .chart{display:grid;grid-template-columns:repeat(12,1fr);gap:6px;align-items:end;height:120px}
+  .chart b{display:block;width:100%;border-radius:6px;background:linear-gradient(180deg,rgba(99,102,241,.8),rgba(34,211,238,.65))}
+  .footer{padding:28px 0;border-top:1px solid var(--border);color:var(--muted)}
+  .row-between{display:flex;align-items:end;justify-content:space-between;gap:12px}
+  .cta{border-radius:26px;border:1px solid var(--border);padding:24px;background:linear-gradient(135deg,rgba(99,102,241,.25),rgba(34,211,238,.15))}
+  .small{font-size:13px;color:var(--muted)}
+
+<style>
+  .wa-float{position:fixed;right:16px;bottom:16px;z-index:9999}
+  .wa-float a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;
+    background:linear-gradient(135deg,#22c55e,#16a34a);color:#0b0b0c;font-weight:800;border:1px solid #064e3b;
+    box-shadow:0 6px 18px rgba(16,185,129,.35)}
+  .wa-float svg{width:20px;height:20px}
+  @media (max-width:600px){.wa-float a{padding:10px 12px}}
+</style>
+
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="container nav">
+    <a href="#" class="brand">
+      <span class="logo" aria-label="OSKCORP logo">
+        <svg viewBox="0 0 64 64" width="36" height="36" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#22d3ee"/>
+            </linearGradient>
+          </defs>
+          <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/>
+          <path d="M18 40 L32 16 L46 40" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="32" cy="44" r="3.5" fill="#fff"/>
+        </svg>
+      </span>
+      <span>
+        <div class="small">Consultora</div>
+        <div class="title">OSKCORP <span style="background:linear-gradient(90deg,#6366f1,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">SPA</span></div>
+      </span>
+    </a>
+    <div class="spacer"></div>
+    <nav class="small">
+      <a href="#servicios">Servicios</a> ·
+      <a href="#portafolio">Portafolio</a> ·
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn ghost" href="mailto:contacto.oskcorp@gmail.com?subject=Consulta%20OSKCORP">Escríbeme</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Automatizamos procesos, <span style="background:linear-gradient(90deg,#6366f1,#22d3ee);-webkit-background-clip:text;background-clip:text;color:transparent">transformamos gestión</span>.</h1>
+        <p class="muted" style="margin-top:10px;max-width:56ch">
+          Ingeniería + Software a medida para municipalidades, salud y empresas. Entregamos demos funcionales
+          y proyectos listos para producción (ERP, WMS FEFO, RRHH, señalética, veterinaria, agro, dashboards).
+        </p>
+        <div style="display:flex;gap:10px;margin-top:14px">
+          <a class="btn primary" href="#portafolio">Ver portafolio</a>
+          <a class="btn" href="#servicios">Servicios</a>
+        </div>
+        <div class="small" style="margin-top:12px">
+          📍 Lo Espejo, Chile · ✉️ contacto.oskcorp@gmail.com · 📞 +56 9 8452 8431
+        </div>
+        <div class="kpis" style="margin-top:18px">
+          <div class="kpi"><div class="n">+10</div><div class="small">Sistemas creados</div></div>
+          <div class="kpi"><div class="n">+7</div><div class="small">Años de experiencia</div></div>
+          <div class="kpi"><div class="n">24/7</div><div class="small">Soporte por correo</div></div>
+          <div class="kpi"><div class="n">+20%</div><div class="small">Ahorro promedio</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="mock">
+          <div class="row">
+            <div class="card"><div class="small">Inventario</div><div style="font-weight:900;font-size:22px">1324</div><div class="bar"><i></i></div></div>
+            <div class="card"><div class="small">Órdenes</div><div style="font-weight:900;font-size:22px">86</div><div class="bar"><i></i></div></div>
+            <div class="card"><div class="small">Alertas</div><div style="font-weight:900;font-size:22px">5</div><div class="bar"><i></i></div></div>
+          </div>
+          <div class="row" style="grid-template-columns: 2fr 1fr;">
+            <div class="card">
+              <div class="small" style="font-weight:700">Consumo mensual (FEFO)</div>
+              <div class="chart" id="chart"></div>
+            </div>
+            <div class="card">
+              <div class="small" style="font-weight:700">Caducidades próximas</div>
+              <ul class="small" style="margin:8px 0 0 18px">
+                <li>Paracetamol 500 mg — <span style="color:var(--warn)">en 12 días</span></li>
+                <li>Gasas estériles 10x10 — <span style="color:var(--warn)">en 19 días</span></li>
+                <li>Ibuprofeno 400 mg — <span style="color:var(--warn)">en 27 días</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios" class="section">
+    <div class="container">
+      <h2>Servicios</h2>
+      <p class="muted" style="max-width:60ch">Soluciones robustas, de bajo costo de operación y listas para presentar a clientes y entidades públicas.</p>
+      <div class="services" style="margin-top:12px">
+        <div class="service">
+          <h3>ERP y WMS a medida</h3>
+          <p class="small">Implementación de ERP, FEFO/FEFO, multi‑bodega, QR/Barcodes, caducidades, reportes y permisos por rol.</p>
+        </div>
+        <div class="service">
+          <h3>Automatización municipal</h3>
+          <p class="small">Sistemas para licitaciones, señalética, flota, solicitudes RRHH, mantención y atención ciudadana.</p>
+        </div>
+        <div class="service">
+          <h3>Apps y dashboards</h3>
+          <p class="small">KPIs, analítica, apps móviles/web, empaquetado .exe para demos sin internet y despliegue rápido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portafolio" class="section">
+    <div class="container">
+      <div class="row-between">
+        <h2>Portafolio</h2>
+        <a class="small" href="#contacto">¿Necesitas algo similar?</a>
+      </div>
+      <div class="grid3" style="margin-top:12px">
+        <!-- Project Cards -->
+        <article class="project">
+          <div class="body">
+            <div style="font-weight:700">Control Center (Inventarios / Salud)</div>
+            <p class="small">WMS con FEFO/FEFO, caducidades, multi‑bodega, alertas por correo, dashboard y roles.</p>
+            <div class="tags">
+              <span class="tag">WMS</span><span class="tag">Salud</span><span class="tag">FEFO</span><span class="tag">Firebase</span>
+            </div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <div style="font-weight:700">ERP ONE (PyMEs / Municipalidades)</div>
+            <p class="small">Finanzas, RRHH, Compras, Inventario, Producción, CRM y Logística. Demo listo para licitaciones.</p>
+            <div class="tags"><span class="tag">ERP</span><span class="tag">Full‑Stack</span><span class="tag">MySQL</span><span class="tag">Node/React</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <div style="font-weight:700">CampoSeguro (Agro)</div>
+            <p class="small">Gestión de cosechas, inventarios, finanzas y proveedores. Modo offline/online para zonas rurales.</p>
+            <div class="tags"><span class="tag">Agro</span><span class="tag">Offline</span><span class="tag">Flutter/Web</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <div style="font-weight:700">Veterinaria PRO</div>
+            <p class="small">Fichas clínicas, chip/QR, procedimientos (consulta, cirugía menor/mayor, especialidades) y reportes.</p>
+            <div class="tags"><span class="tag">Salud Animal</span><span class="tag">QR/Chip</span><span class="tag">Reportes</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <div style="font-weight:700">Señaléticas Muni (Mantención)</div>
+            <p class="small">Catastro, órdenes de trabajo, SLA, georreferencias, fotos y KPIs para gestión de señaléticas.</p>
+            <div class="tags"><span class="tag">Municipal</span><span class="tag">OT</span><span class="tag">Mapa/KPIs</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="body">
+            <div style="font-weight:700">Daily Optimizer PRO</div>
+            <p class="small">Planificación personal con IA, objetivos, hábitos, presupuesto y tableros.</p>
+            <div class="tags"><span class="tag">Productividad</span><span class="tag">IA</span><span class="tag">Planner</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="section">
+    <div class="container">
+      <div class="cta">
+        <h2>¿Conversamos tu proyecto?</h2>
+        <p>Envíame un correo con una idea breve y agendamos. Puedo compartirte demos funcionales (.exe / web) y plazos.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="mailto:contacto.oskcorp@gmail.com?subject=Requerimiento%20de%20software%20-%20OSKCORP">Escribir ahora</a>
+          <a class="btn ghost" href="#portafolio">Ver proyectos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="0 0 64 64" width="32" height="32">
+          <defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#22d3ee"/></linearGradient></defs>
+          <rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g2)"/><path d="M18 40 L32 16 L46 40" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="32" cy="44" r="3.5" fill="#fff"/>
+        </svg>
+      </span>
+      <span class="small">© <span id="year"></span> OSKCORP SPA. Todos los derechos reservados.</span>
+    </div>
+    <div class="small">
+      <a href="#servicios">Servicios</a> · <a href="#portafolio">Portafolio</a> · <a href="#contacto">Contacto</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Simple chart bars
+  const chart = document.getElementById('chart');
+  const values = Array.from({length:12}, (_,i)=> 30 + Math.sin(i)*20 + (i%3)*8);
+  values.forEach(v=>{
+    const b = document.createElement('b');
+    b.style.height = v + '%';
+    chart.appendChild(b);
+  });
+  // Dynamic year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
